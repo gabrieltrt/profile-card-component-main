@@ -11,9 +11,16 @@
     -webkit-font-smoothing: antialiased;
     font-family: 'Kumbh Sans', sans-serif;
     min-height: 100vh;
-    background: #19A1AE;
+    background-color: #19A1AE;
+    background-image: url(./images/bg-pattern-top.svg), url(./images/bg-pattern-bottom.svg);
+    background-size: 622px 622px, 623px 623px;
+    background-repeat: no-repeat;
+    background-position: calc(50% - 21rem) calc(86vh - 59rem), 
+                         calc(50% + 18rem) calc(50vh + 1rem);
+                         
     display: flex;
     align-items: center;
+    justify-content: center;
     }
     
     img, picture, video, canvas, svg {
@@ -25,27 +32,16 @@
       font: inherit;
     }
 
- .pattern {
-    background: url(./images/bg-pattern-card.svg) repeat center;
-    height: 8.75rem;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
- }   
-
 .main-content {
     max-width: 20.375rem;
-    margin: 0 auto;
-    background: #FFFFFF;
-    border-radius: 15px;;
-}
+    background-image: url(./images/bg-pattern-card.svg);
+    background-size: auto 140px;
+    background-repeat: no-repeat;
 
-.profile-data {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    bottom: 53px;
+    border-radius: 15px;;
+    padding-top: calc(8.75rem - 3.25rem);
+    text-align: center;
+    background-color: #FFFFFF;
 }
 
 .profile-picture {
@@ -54,39 +50,74 @@
     border: 5px solid #FFFFFF;
 }
 
-.profile-data h1 {
+.profile-card h1 {
     font-size: 1.125rem;
+    font-weight: 700;
     color: #2E3349;
 }
 
-.profile-data span {
+.age {
     color: #6B7082;
+    font-weight: 400;
+    margin-left: 0.5938rem;
 }
 
-.profile-data .age {
-    font-weight: 400;
-}
-.profile-data .city {
+.city {
+    color: #6B7082;
     font-size: 0.875rem;
     margin-top: 0.5rem;
     margin-bottom: 1.5rem;
+    display: block;
 }
 
-.profile-data::after {
+.city::after {
     content: "";
+    display: block;
     width: 100%;
     border-top: 1px solid #E8E9EC;
+    position: relative;
+    top: 1.75rem;
 }
 
 .social {
+    list-style: none;
     display: flex;
-    font-size: 18px;
-    margin: 0 52px 24px 41px;
+    padding: 1.5rem 3.25rem 1.5rem 2.5625rem;
 }
 
-.followers, .likes, .photos {
+ul .likes {
+    margin-left: 2.375rem;
+    margin-right: 2.875rem;
+}
+
+li {
     display: flex;
     flex-direction: column;
+    gap: 9px;
 }
+
+
+.followers span:first-child,
+ .likes span:first-child,
+ .photos span:first-child {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #2E3349;
+}
+
+.followers span:last-child,
+ .likes span:last-child,
+ .photos span:last-child {
+    font-size: 0.625rem;
+    letter-spacing: 0.125rem;
+}
+
+@media only screen and (min-width: 1000px) {
+    .main-content {
+        max-width: initial;
+        width: 350px;
+    }
+}
+
 
 
